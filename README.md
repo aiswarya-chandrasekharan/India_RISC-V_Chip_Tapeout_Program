@@ -33,4 +33,27 @@ This final phase prepares the design for manufacturing. The synthesized netlist 
 
 * **O4 (Layout):** This is the final **GDSII** (Graphic Data System II) file. It includes the complete physical layout of the chip, such as floorplanning, placement, clock tree synthesis (CTS), and routing. This file is sent to the foundry for fabrication. The design is verified against the netlist to ensure that **O3 = O4**. This often occurs through **DRC** (Design Rule Checking) and **LVS** (Layout Versus Schematic) checks to ensure the physical layout accurately represents the schematic and adheres to manufacturing rules.
 * **Final Verification:** The entire flow is a continuous verification process, where the output of each stage is checked against the previous one. The ultimate goal is to ensure that **O1 = O2 = O3 = O4**.
-* **Applications:** The final manufactured chip can be used in many products, like smartwatches, Arduino boards, TV panels, and air conditioning applications. The chip's operating frequency can be optimized for specific uses.
+* **Applications:** The final manufactured chip can be used in many products, like smartwatches, Arduino boards, TV panels, and air conditioning applications. The chip's operating frequency can be optimized for specific uses
+
+## Tools Installation
+### Yosys
+```
+$ git clone https://github.com/YosysHQ/yosys.git
+$ cd yosys 
+$ sudo apt install make (If make is not installed please install it) 
+$ sudo apt-get install build-essential clang bison flex \
+    libreadline-dev gawk tcl-dev libffi-dev git \
+    graphviz xdot pkg-config python3 libboost-system-dev \
+    libboost-python-dev libboost-filesystem-dev zlib1g-dev
+$ make 
+$ sudo make install
+```
+### Iverilog
+```
+$ sudo apt-get install iverilog
+```
+### GTKWave
+```
+$ sudo apt update
+$ sudo apt install gtkwave
+```
